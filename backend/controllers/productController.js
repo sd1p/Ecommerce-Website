@@ -12,11 +12,10 @@ exports.createProduct = catchAsyncErrors(async (req, res, next) => {
   });
 });
 
-
 //Updating a product --Admin
 exports.updateProduct = catchAsyncErrors(async (req, res, next) => {
   let product = await Product.findById(req.params.id);
-  
+
   if (!product) {
     return next(new ErrorHandler("Product Not Found", 500));
   }
@@ -46,11 +45,10 @@ exports.deleteProduct = catchAsyncErrors(async (req, res, next) => {
   });
 });
 
-
 //Get All Products with API Features.
 exports.getAllProducts = catchAsyncErrors(async (req, res) => {
   const resultPerPage = 5;
-  const productCount = await Product.countDocuments()
+  const productCount = await Product.countDocuments();
   const apiFeatures = new ApiFeatures(Product, req.query)
     .search()
     .filter()
@@ -74,5 +72,3 @@ exports.getProductDetails = catchAsyncErrors(async (req, res, next) => {
     product,
   });
 });
-
-
