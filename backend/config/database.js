@@ -7,8 +7,8 @@ const connectDatabase = () => {
       // useUnifiedTopology: true,
       // useCreateIndex:true
     })
-    .then((data) => {
-      console.log(`Mongodb connected with server ${data.connection.host}`);
+    .then((info) => {
+      console.log(`Mongodb connected with server ${info.connection.host}`);
     });
 };
 

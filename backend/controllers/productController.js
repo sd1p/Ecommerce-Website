@@ -45,7 +45,7 @@ exports.deleteProduct = catchAsyncErrors(async (req, res, next) => {
   });
 });
 
-//Get All Products with API Features.
+//Get All Products with API Features i.e search, filter, pagination.
 exports.getAllProducts = catchAsyncErrors(async (req, res) => {
   const resultPerPage = 5;
   const productCount = await Product.countDocuments();

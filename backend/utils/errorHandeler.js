@@ -1,9 +1,9 @@
 //error handler for controller functions 
-//used by returning constructor (new ErrorHandler(messege,statuscode)) wrapped in next.
+//used by returning constructor (new ErrorHandler(message,statuscode)) wrapped in next.
 class ErrorHandler extends Error{
-    constructor(messege,statusCode)
+    constructor(message,statusCode)
     {
-        super(messege);
+        super(message);
         this.statusCode = statusCode;
 
         Error.captureStackTrace(this,this.constructor)
