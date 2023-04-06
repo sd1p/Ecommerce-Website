@@ -1,4 +1,5 @@
 //creating token and saving in cookie.
+//sending cookie to client on login and register.
 const sendToken = (user, statusCode, res) => {
   const token = user.getJWTToken();
 
