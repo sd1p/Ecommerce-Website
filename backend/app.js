@@ -8,9 +8,11 @@ app.use(cookieParser());
 //Route Import
 const productRoutes = require("./routes/productRoutes");
 const userRoutes = require("./routes/userRoutes");
+const orderRoutes = require("./routes/orderRoutes");
 const ErrorHandler = require("./utils/errorHandeler");
 app.use("/api/v1", productRoutes);
 app.use("/api/v1", userRoutes);
+app.use("/api/v1", orderRoutes);
 
 //Middleware for errors
 

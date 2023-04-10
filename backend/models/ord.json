@@ -1,0 +1,25 @@
+{
+  "itemPrice": 200,
+  "taxPrice": 36,
+  "shippingPrice": 100,
+  "totalPrice": 336,
+  "orderItems": {
+    "product": "642567c2e2c62f0efaca4b94",
+    "name": "Cherry",
+    "price": 60,
+    "image": "336",
+    "quantity": 1
+  },
+  "shippingInfo": {
+    "address": "22 street",
+    "city": "jsr",
+    "state": "JH",
+    "country": "IN",
+    "pinCode": 619695,
+    "phoneNo": 1234567890
+  },
+  "paymentInfo": {
+    "id": "sample paymentInfo",
+    "status": "success"
+  }
+}

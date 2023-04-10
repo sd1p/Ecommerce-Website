@@ -36,7 +36,7 @@ const productSchema = mongoose.Schema({
     type: String,
     required: [true, "Please Enter Product Category"],
   },
-  Stock: {
+  stock: {
     type: Number,
     required: [true, "Please Enter product stock"],
     maxLength: [4, "Stock cannot exceed 4 digits"],
@@ -58,6 +58,11 @@ const productSchema = mongoose.Schema({
       },
       comment: {
         type: String,
+        required: true,
+      },
+      user: {
+        type: mongoose.Schema.ObjectId,
+        ref: "User",
         required: true,
       },
     },
