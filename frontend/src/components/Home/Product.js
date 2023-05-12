@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import ReactStarts from "react-rating-stars-component";
-//#TODO: make ReactStars Responsive. (paritally complete)
+
+//#TODO: make ReactStars Responsive. (paritally complete) DONE!
+
 const Product = ({ product }) => {
   const options = {
     edit: false,
@@ -16,7 +18,8 @@ const Product = ({ product }) => {
       <img src={product.images[0].url} alt={product.name} />
       <p>{product.name}</p>
       <div>
-        <ReactStarts {...options} /> <span>(256 Reviews)</span>
+        <ReactStarts {...options} />{" "}
+        <span>({product.numOfReviews} Reviews)</span>
       </div>
       <span>{`₹${product.price}`}</span>
     </Link>
