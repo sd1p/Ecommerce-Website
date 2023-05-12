@@ -113,7 +113,7 @@
   }
   .productCard > div {
     margin: 0vmax;
-    display: block;
+    display: flex;
   }
   .productCard > span {
     font-size: 1.5vmax;

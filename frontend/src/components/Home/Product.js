@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import ReactStarts from "react-rating-stars-component";
-//#TODO: make ReactStars Responsive.
+//#TODO: make ReactStars Responsive. (paritally complete)
 const Product = ({ product }) => {
   const options = {
     edit: false,

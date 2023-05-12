@@ -42,7 +42,7 @@ exports.deleteProduct = catchAsyncErrors(async (req, res, next) => {
   await Product.deleteOne({ _id: req.params.id });
   res.status(200).json({
     success: true,
-    message: "Product deleted Successfully",
+    message: "Product Deleted Successfully",
   });
 });
 
@@ -66,7 +66,7 @@ exports.getAllProducts = catchAsyncErrors(async (req, res) => {
 exports.getProductDetails = catchAsyncErrors(async (req, res, next) => {
   const product = await Product.findById(req.params.id);
   if (!product) {
-    return next(new ErrorHandler("Product Not Found", 500));
+    return next(new ErrorHandler("Product Not Found", 404));
   }
   return res.status(200).json({
     success: true,
@@ -97,8 +97,7 @@ exports.createProductReview = catchAsyncErrors(async (req, res, next) => {
     });
   } else {
     product.reviews.push(review);
-    product.user = req.user._id;
-    product.numOfReviews = product.reviews.length;
+    product.numOfReviews = product.reviews.length || 0;
   }
 
   let avg = 0;
@@ -106,7 +105,7 @@ exports.createProductReview = catchAsyncErrors(async (req, res, next) => {
     avg += review.rating;
   });
 
-  product.rating = avg / product.reviews.length;
+  product.rating = avg / product.reviews.length || 0;
   await product.save({ validatorBeforeSave: false });
 
   res.status(200).json({

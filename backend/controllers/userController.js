@@ -5,7 +5,6 @@ const ErrorHandler = require("../utils/errorHandeler");
 const sendToken = require("../utils/jwtToken");
 const sendEmail = require("../utils/sendEmail");
 const crypto = require("crypto");
-const { log } = require("console");
 
 //register users
 //TODO: register user with email verification.
@@ -168,7 +167,7 @@ exports.updateUserPassword = catchAsyncErrors(async (req, res, next) => {
 });
 
 //update user profile
-//TOOD change email address with email verification.
+//TODO: change email address with email verification.
 exports.updateUserProfile = catchAsyncErrors(async (req, res, next) => {
   const newUserData = {
     name: req.body.name,
@@ -206,7 +205,7 @@ exports.getAllUsers = catchAsyncErrors(async (req, res, next) => {
 
 //get a user (admin)
 exports.getAUser = catchAsyncErrors(async (req, res, next) => {
-  log(req.params);
+  
   const user = await User.findById(req.params.id);
 
   if (!user) {
