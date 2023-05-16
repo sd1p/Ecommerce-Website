@@ -4,7 +4,7 @@ import ReactStarts from "react-rating-stars-component";
 
 //#TODO: make ReactStars Responsive. (paritally complete) DONE!
 
-const Product = ({ product }) => {
+const ProductCard = ({ product }) => {
   const options = {
     edit: false,
     color: "rgba(20,20,20,0.1)",
@@ -14,7 +14,7 @@ const Product = ({ product }) => {
     isHalf: true,
   };
   return (
-    <Link className="productCard" to={product._id}>
+    <Link className="productCard" to={`product/${product._id}`}>
       <img src={product.images[0].url} alt={product.name} />
       <p>{product.name}</p>
       <div>
@@ -26,4 +26,4 @@ const Product = ({ product }) => {
   );
 };
 
-export default Product;
+export default ProductCard;
