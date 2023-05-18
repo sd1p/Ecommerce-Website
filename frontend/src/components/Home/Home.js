@@ -8,26 +8,10 @@ import { useDispatch, useSelector } from "react-redux";
 import Loader from "../layout/Loader/Loader";
 import { useAlert } from "react-alert";
 
-//sample product
-// const productT = {
-//   name: "Blue Shirt",
-//   images: [
-//     {
-//       url: "https://images.unsplash.com/photo-1523381294911-8d3cead13475?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-//     },
-//   ],
-//   price: "2000",
-//   _id: "random",
-//   numOfReviews: 34,
-// };
-//using component
-// <Product product={productT} />
 const Home = () => {
   const alert = useAlert();
   const dispatch = useDispatch();
-  const { loading, error, products, productsCount } = useSelector(
-    (state) => state.products
-  );
+  const { loading, error, products } = useSelector((state) => state.products);
 
   useEffect(() => {
     if (error) {

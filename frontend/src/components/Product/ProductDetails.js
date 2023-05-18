@@ -8,6 +8,7 @@ import ReactStarts from "react-rating-stars-component";
 import ReviewCard from "./ReviewCard";
 import Loader from "../layout/Loader/Loader";
 import { useAlert } from "react-alert";
+import { useState } from "react";
 const ProductDetails = () => {
   const alert = useAlert();
   //for getting details from redux.
@@ -27,6 +28,7 @@ const ProductDetails = () => {
     isHalf: true,
   };
 
+  const [value, setValue] = useState(1);
   useEffect(() => {
     if (error) {
       alert.error(error);
@@ -70,7 +72,7 @@ const ProductDetails = () => {
                 <div className="detailsBlock-3-1">
                   <div className="detailsBlock-3-1-1">
                     <button>-</button>
-                    <input type="number" value={1} />
+                    <input type="number" defaultValue={1} />
                     <button>+</button>
                   </div>
                   <button>Add to Cart</button>

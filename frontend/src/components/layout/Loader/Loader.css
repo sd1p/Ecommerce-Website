@@ -1,10 +1,11 @@
 .loading {
   width: 100vmax;
-  height: 100vmax;
+  height: 25vmax;
   background-color: white;
   display: grid;
   place-items: center;
   max-width: 100%;
+  padding-top: 10vmax;
 }
 
 .loading > div {
