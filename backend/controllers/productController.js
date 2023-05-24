@@ -55,10 +55,15 @@ exports.getAllProducts = catchAsyncErrors(async (req, res) => {
     .filter()
     .pagination(resultPerPage);
   const products = await apiFeatures.query;
+  //#TODO: improve advanced filter/search to return product count after filter for frontend
+  const apiFeatures2 = new ApiFeatures(Product, req.query).search().filter();
+  const productFilterCount = await apiFeatures2.count;
   res.status(200).json({
     success: true,
     products,
     productCount,
+    resultPerPage,
+    productFilterCount,
   });
 });
 

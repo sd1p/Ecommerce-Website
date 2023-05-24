@@ -8,12 +8,14 @@ import ReactStarts from "react-rating-stars-component";
 import ReviewCard from "./ReviewCard";
 import Loader from "../layout/Loader/Loader";
 import { useAlert } from "react-alert";
-import { useState } from "react";
+import MetaData from "../layout/MetaData";
+
 const ProductDetails = () => {
   const alert = useAlert();
-  //for getting details from redux.
-  const dispatch = useDispatch();
   const { id } = useParams();
+
+  //for getting details from store and using reducer functions.
+  const dispatch = useDispatch();
   const { product, loading, error } = useSelector(
     (state) => state.productDetails
   );
@@ -28,7 +30,6 @@ const ProductDetails = () => {
     isHalf: true,
   };
 
-  const [value, setValue] = useState(1);
   useEffect(() => {
     if (error) {
       alert.error(error);
@@ -39,6 +40,7 @@ const ProductDetails = () => {
 
   return (
     <>
+      <MetaData title={`${product.name}  ECOM`} />
       {loading ? (
         <Loader />
       ) : (

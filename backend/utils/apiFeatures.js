@@ -36,6 +36,7 @@ class ApiFeatures {
     queryTemp = JSON.parse(queryTemp);
     //console.log(queryTemp);
     this.query = this.query.find(queryTemp);
+    this.count = this.query.countDocuments();
     return this;
   }
 

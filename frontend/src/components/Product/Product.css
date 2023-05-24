@@ -11,8 +11,9 @@
 .products {
   display: flex;
   flex-wrap: wrap;
-  padding: 0 5vmax;
+  padding: 0 6vmax;
   justify-content: center;
+  min-height: 30vh;
 }
 
 .paginationBox {
@@ -20,4 +21,54 @@
   text-align: center;
   justify-content: center;
   margin: auto;
+}
+
+.filterBox {
+  width: 10vmax;
+  position: fixed;
+  top: 10vmax;
+  left: 2vmax;
+}
+
+.categoryBox {
+  padding: 0;
+  margin-bottom: 1vmax;
+}
+
+.categoryLink {
+  list-style: none;
+  font: 400 1vmax "Roboto";
+  color: rgba(0, 0, 0, 0.6);
+  margin: 0.1vmax auto;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.categoryLink:hover {
+  color: #eff30d;
+}
+
+.filterBox > fieldset {
+  border: 1px solid rgba(0, 0, 0, 0.227);
+}
+.blank {
+  color: rgba(0, 0, 0, 0.418);
+  text-align: center;
+  justify-self: center;
+  margin: auto;
+  height: 20vmax;
+}
+
+@media screen and (max-width: 600px) {
+  .products {
+    padding: 0 5vmax;
+  }
+  .filterBox {
+    width: 20vmax;
+    position: static;
+    margin: auto;
+  }
+  .categoryLink {
+    font-size: 1.8vmax;
+  }
 }

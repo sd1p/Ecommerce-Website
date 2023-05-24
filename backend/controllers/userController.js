@@ -5,19 +5,28 @@ const ErrorHandler = require("../utils/errorHandeler");
 const sendToken = require("../utils/jwtToken");
 const sendEmail = require("../utils/sendEmail");
 const crypto = require("crypto");
+const cloudianry = require("cloudinary");
 
 //register users
 //TODO: register user with email verification.
 exports.registerUser = catchAsyncErrors(async (req, res, next) => {
+  const dataURI = req.body.avatar;
+  const uploadStr = `data:image/png;base64,${dataURI}`;
+  const myCloud = await cloudianry.v2.uploader.upload(dataURI, {
+    folder: "avatars",
+    width: 150,
+    crop: "scale",
+  });
+
   const { name, email, password } = req.body;
-  //console.log(req.body);
+
   const user = await User.create({
     name,
     email,
     password,
     avatar: {
-      public_id: "this adderss exp",
-      url: "this url exp",
+      public_id: myCloud.public_id,
+      url: myCloud.secure_url,
     },
   });
   //const token = user.getJWTToken();
@@ -40,6 +49,8 @@ exports.loginUser = catchAsyncErrors(async (req, res, next) => {
   }
 
   const isPasswordMatched = await user.comparePassword(password);
+
+  user.password = undefined;
 
   //console.log(isPasswordMatched);
   if (!isPasswordMatched) {
@@ -205,7 +216,6 @@ exports.getAllUsers = catchAsyncErrors(async (req, res, next) => {
 
 //get a user (admin)
 exports.getAUser = catchAsyncErrors(async (req, res, next) => {
-  
   const user = await User.findById(req.params.id);
 
   if (!user) {

@@ -44,6 +44,10 @@ const options = {
   searchIconColorHover: "#eff30d",
   cartIconColorHover: "#eff30d",
   cartIconMargin: "1vmax",
+  link1AnimationTime: 0.5,
+  link2AnimationTime: 0.75,
+  link3AnimationTime: 1,
+  link4AnimationTime: 1.25,
 };
 
 const Header = () => {

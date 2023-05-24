@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Search.css";
+import MetaData from "../layout/MetaData";
 const Search = () => {
   const [keyword, setKeyword] = useState(" ");
   const navigate = useNavigate();
@@ -15,6 +16,7 @@ const Search = () => {
   };
   return (
     <>
+      <MetaData title={"Search a Product ECOM"} />
       <form className="searchBox" onSubmit={searchSubmitHandler}>
         <input
           type="text"
