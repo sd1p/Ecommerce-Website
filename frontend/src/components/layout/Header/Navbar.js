@@ -40,7 +40,6 @@ const Navbar = ({ user, auth }) => {
           </Link>
         </div>
 
-        {console.log(location === "/search" ? "hidden" : "")}
         <div className={`nav-middle ${location === "/search" ? "hidden" : ""}`}>
           {/* <Link to={"/search"} className="search-bar">
             <input className="search-inp" type="text" placeholder=" Search" />

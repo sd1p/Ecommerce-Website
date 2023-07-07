@@ -35,7 +35,6 @@ function App() {
       {/* <Header /> */}
       <Navbar auth={isAuthenticated} user={user} />
       {/* {isAuthenticated && <UserOptions user={user} />} */}
-      {console.log(user)}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/loading" element={<Loader />} />
