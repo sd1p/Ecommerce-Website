@@ -10,9 +10,9 @@ process.on("uncaughtException", (err) => {
   console.log(`Shutting down the server due to Uncaught Error`);
   process.exit(1);
 });
-console.log((_dirname = path.resolve(__dirname, "config", "config.env")));
+// console.log((_dirname = path.resolve(__dirname, "config", "config.env")));
 //config .env variables
-dotenv.config({ path: path.resolve(__dirname, "config", "config.env") });
+dotenv.config({ path: "backend/config/.env" });
 
 //connecting to db
 connectDatabase();
