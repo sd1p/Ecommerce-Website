@@ -57,7 +57,7 @@ const Products = () => {
       {loading ? (
         <Loader />
       ) : (
-        <>
+        <div className="product-container">
           <h2 className="productsHeading">Products</h2>
           <div className="products">
             {products.length > 0 ? (
@@ -123,7 +123,7 @@ const Products = () => {
           ) : (
             <></>
           )}
-        </>
+        </div>
       )}
     </>
   );

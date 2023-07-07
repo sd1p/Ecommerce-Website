@@ -1,10 +1,9 @@
 .ProductDetails {
   width: 100vw;
   max-width: 100%;
-  padding: 6vmax;
+  padding: 10vmax 6vmax 6vmax 6vmax;
   box-sizing: border-box;
   display: flex;
-  /* background-color: rgb(193, 192, 192); */
 }
 
 .CarouselImage {

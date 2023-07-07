@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect } from "react";
-import { CgMouse } from "react-icons/all";
+import { IoIosArrowDown } from "react-icons/all";
 import "./Home.css";
 import ProductCard from "./ProductCard";
 import MetaData from "../layout/MetaData";
@@ -33,7 +33,7 @@ const Home = () => {
             <h1>FIND AMAZING PRODUCTS BELOW</h1>
             <a href="#container">
               <button>
-                Scroll <CgMouse />
+                <IoIosArrowDown size={"2vw"} />
               </button>
             </a>
           </div>

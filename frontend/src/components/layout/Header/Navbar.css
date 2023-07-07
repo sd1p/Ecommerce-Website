@@ -1,0 +1,103 @@
+.navbar-container {
+  position: fixed;
+  width: 100%;
+  z-index: 12;
+  top: 0;
+}
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(112, 128, 144, 0.329);
+  height: 90px;
+  backdrop-filter: blur(10px);
+  gap: 1vw;
+}
+
+.nav-left {
+  flex: 4;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 1.5vw;
+}
+.nav-middle {
+  flex: 5;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.nav-right {
+  flex: 2;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5vw;
+}
+.logo-img {
+  width: 7vw;
+  cursor: pointer;
+}
+.search-bar {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.search-form {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.search-inp {
+  padding: none;
+  height: 42px;
+  width: 30vw;
+  border-radius: 6px 0px 0px 6px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.search-icon {
+  background-color: #eff30d;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  color: black;
+}
+.nav-pages {
+  font: 300 1.3vw "Roboto";
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+.icon {
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+}
+.hidden {
+  visibility: hidden;
+}
+
+.speedDialIcon {
+  width: 5vh;
+  height: 5vh;
+  border-radius: 100%;
+}
+.speedDial {
+  position: relative;
+  top: 90px;
+}
+.nav-pages:hover,
+.icon:hover {
+  transition: all 0.5s;
+  color: tomato;
+}
+.search-icon:hover {
+  background-color: #eff30dcc;
+}

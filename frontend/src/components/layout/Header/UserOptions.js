@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from "react";
-import "./Header.css";
+import "./Navbar.css";
 import { SpeedDial, SpeedDialAction } from "@mui/material";
 import Backdrop from "@material-ui/core/Backdrop";
 import DashBoardIcon from "@material-ui/icons/Dashboard";
@@ -45,15 +45,29 @@ const UserOptions = ({ user }) => {
   const [open, setOpen] = useState(false);
   return (
     <Fragment>
-      <Backdrop open={open} style={{ zIndex: "10" }} />
       <SpeedDial
         className="speedDial"
         ariaLabel="SpeedDial"
-        onClose={() => setOpen(false)}
-        onOpen={() => setOpen(true)}
+        onClose={() => {
+          setOpen(false);
+          // setBDOpen(false);
+        }}
+        onOpen={() => {
+          setOpen(true);
+          // setBDOpen(true);
+        }}
         open={open}
         direction="down"
         style={{ zIndex: "11" }}
+        FabProps={{
+          size: "small",
+          style: {
+            height: "2vw",
+            width: "2vw",
+            backgroundColor: "rgba(112, 128, 144, 0)",
+            borderRadius: "50%",
+          },
+        }}
         icon={
           <img
             src={user.avatar.url ? user.avatar.url : "/Profile.png"}
