@@ -23,8 +23,8 @@
 .banner > a > button {
   margin-bottom: 5vmax;
   cursor: pointer;
-  background-color: white;
-  border: 1px solid white;
+  background-color: rgba(255, 255, 255, 0.396);
+  border: 1px solid rgba(255, 255, 255, 0.838);
   border-radius: 3px;
   padding: auto;
   transition: all 0.5s;
